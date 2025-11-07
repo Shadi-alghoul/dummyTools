@@ -1,0 +1,131 @@
+:root {
+  --color-bg: #001827;
+  --color-primary: #37E284;
+  --color-text: #FAF9FE;
+  --color-surface: #102635;
+  --color-surface-2: #1A3A4A;
+  --color-border: rgba(250, 249, 254, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.45);
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --blur-bg: blur(10px);
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(1200px 600px at 20% 60%, rgba(55, 226, 132, 0.08), transparent 70%),
+              radial-gradient(800px 400px at 80% 40%, rgba(55, 226, 132, 0.15), transparent 60%),
+              linear-gradient(135deg, #001827 0%, #0a212d 40%, #11343e 75%, #0d2b2f 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #52f79e;
+}
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 24, 39, 0.75);
+  backdrop-filter: var(--blur-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.app-header::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  width: 180px;
+  height: 40px;
+  background: url('assets/collide_logo.png') no-repeat center left / contain;
+}
+
+.header-text {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.app-content {
+  flex: 1;
+  padding: 40px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+button,
+.btn {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.08);
+}
+
+button:active,
+.btn:active {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}
+
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid rgba(55, 226, 132, 0.5);
+  outline-offset: 3px;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 226, 132, 0.25);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 226, 132, 0.45)
+}
